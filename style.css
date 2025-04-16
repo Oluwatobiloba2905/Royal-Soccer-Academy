@@ -17,16 +17,6 @@
 
 .header video {
     position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.header video {
-    position: absolute;
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -37,7 +27,6 @@
     object-fit: cover;
     z-index: -1;
 }
-
 
 .header .container {
     position: relative;
@@ -63,7 +52,8 @@
     width: 190px;
 }
 
-.login-btn {
+.login-btn,
+.booking-btn {
     width: 100px;
     padding: 8px 0;
     border: 2px solid #fff;
@@ -71,9 +61,11 @@
     color: white;
     border-radius: 50px;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.login-btn:hover {
+.login-btn:hover,
+.booking-btn:hover {
     background-color: black;
 }
 
@@ -98,9 +90,13 @@
     padding: 100px 0;
 }
 
-h1 {
+.features h1 {
     text-align: center;
     padding-bottom: 30px;
+}
+
+.feature-img {
+    position: relative;
 }
 
 .feature-img img {
@@ -119,10 +115,6 @@ h1 {
     position: absolute;
     left: 20px;
     bottom: -25px;
-}
-
-.feature-img {
-    position: relative;
 }
 
 .rating {
@@ -190,25 +182,28 @@ h1 {
     color: white;
 }
 
-.booking-btn {
-    width: 100px;
-    padding: 8px 0;
-    border: 2px solid #fff;
-    background: transparent;
-    color: white;
-    border-radius: 50px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.booking-btn:hover {
-    background-color: black;
-}
-
 .footer {
-    padding: 100px 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-image: linear-gradient(#2d557d, #9610fd);
     color: white;
+    padding: 80px 40px 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 220px;
+    margin: 20px;
+}
+
+.footer-column h4 {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
 }
 
 .footer-logo {
@@ -216,36 +211,14 @@ h1 {
     margin: 15px 0;
 }
 
-.footer h4 {
-    margin-top: 15px;
-    margin-bottom: 25px;
-}
-
-.footer p {
-    font-size: 12px;
-    text-align: justify;
-    padding-right: 35px;
-}
-
-.footer .row .fa {
-    padding-right: 10px;
-    font-size: 15px;
-}
-
-.footer hr {
-    margin-top: 10px;
-    background: #efefef;
-}
-
 .copywright {
+    width: 100%;
     text-align: center;
-    color: white;
-    margin-top: 20px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
 }
-
-
-
-
 
 .footer-btn {
     display: inline-block;
@@ -262,8 +235,6 @@ h1 {
     color: #ffd700;
 }
 
-
-
 a {
     text-decoration: none;
     color: inherit;
@@ -272,55 +243,278 @@ a {
 
 a:hover {
     color: #ffd700;
-    /* soft gold-ish color */
     text-decoration: underline;
 }
 
 .footer a {
-    color: #fff;
     font-weight: 500;
 }
 
-.footer a:hover {
-    color: #ffd700;
-    text-decoration: none;
+.about-section {
+    padding: 4rem 1rem;
 }
 
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
 
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 1rem;
+    object-fit: cover;
+}
 
-.booking-btn {
-    width: 120px;
-    padding: 10px 0;
-    outline: none !important;
-    border: 2px solid #fff;
-    background: transparent;
+.about-content {
+    max-width: 500px;
+}
+
+.section-tag {
+    font-weight: bold;
+    color: #167050;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    font-weight: 700;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #25b683;
     color: white;
-    border-radius: 50px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.booking-btn:hover {
-    background-color: #ffffff;
-    color: black;
-}
-
-
-
-.price a {
-    text-decoration: none;
-    color: black;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
     font-weight: 600;
-    display: block;
-    text-align: center;
-    padding: 8px 0;
-    border-radius: 8px;
-    /* background-color: #dcfd08; */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    transition: background 0.3s ease;
 }
 
-.price a:hover {
-    /* background-color: #c0e000; */
-    transform: scale(1.05);
-    color: #000;
+.btn:hover {
+    background-color: #135e45;
+}
+
+.heading-wrapper {
+    text-align: center;
+    position: relative;
+    padding: 10px 0;
+}
+
+.scrolling-text-wrapper {
+    width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 30px;
+}
+
+.scrolling-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 10s linear infinite;
+    font-size: 1rem;
+    color: #fff;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.navbar-nav .nav-link {
+    padding: 10px;
+    font-weight: bold;
+    color: white !important;
+}
+
+
+
+
+.abraham>.isaac {
+    display: none;
+}
+
+.abraham {
+    font-weight: 800;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 3px 15px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    width: 12rem;
+    position: relative;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.nineveh {
+    height: 34%;
+    aspect-ratio: 1;
+    margin-block: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.nineveh::after,
+.nineveh::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 100%;
+    width: 2.5px;
+    border-radius: 500px;
+    transform-origin: bottom;
+}
+
+.nineveh::after {
+    transform: rotate(35deg) translateX(-0.5px);
+}
+
+.nineveh::before {
+    transform: rotate(-35deg) translateX(0.5px);
+}
+
+.abraham>.isaac:checked+.nineveh {
+    transform: rotateX(180deg);
+}
+
+.samuel {
+    background-color: white;
+    color: rgb(1, 1, 1);
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 130%;
+    overflow: hidden;
+    clip-path: inset(0% 0% 0% 0% round 10px);
+    transition: all 0.4s;
+}
+
+.joshua {
+    --delay: 0.4s;
+    --trdelay: 0.15s;
+    padding: 8px 10px;
+    border-radius: inherit;
+    transition: background-color 0.2s 0s;
+    position: relative;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.joshua::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 95%;
+}
+
+.joshua:hover {
+    background-color: rgb(223, 223, 223);
+}
+
+.isaac:checked~.samuel {
+    clip-path: inset(10% 50% 90% 50% round 10px);
+}
+
+.isaac:not(:checked)~.samuel .joshua {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.isaac:not(:checked)~.samuel .joshua:nth-child(1) {
+    transition:
+        transform 0.4s var(--delay),
+        opacity 0.4s var(--delay);
+}
+
+.isaac:not(:checked)~.samuel .joshua:nth-child(2) {
+    transition:
+        transform 0.4s calc(var(--delay) + (var(--trdelay) * 1)),
+        opacity 0.4s calc(var(--delay) + (var(--trdelay) * 1));
+}
+
+.isaac:not(:checked)~.samuel .joshua:nth-child(3) {
+    transition:
+        transform 0.4s calc(var(--delay) + (var(--trdelay) * 2)),
+        opacity 0.4s calc(var(--delay) + (var(--trdelay) * 2));
+}
+
+.isaac:not(:checked)~.samuel .joshua:nth-child(4) {
+    transition:
+        transform 0.4s calc(var(--delay) + (var(--trdelay) * 3)),
+        opacity 0.4s calc(var(--delay) + (var(--trdelay) * 3));
+}
+
+.bar-isaac {
+    -webkit-appearance: none;
+    display: none;
+    visibility: hidden;
+}
+
+.moses {
+    display: flex;
+    height: 50%;
+    width: 20px;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.abraham-list {
+    --transform: -25%;
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    /* Change the color of the hamburger bars to darkviolet */
+    transition: all 0.4s;
+    position: relative;
+}
+
+.isaac:not(:checked)~.moses>.elijah {
+    transform-origin: top right;
+    transform: translateY(var(--transform)) rotate(-45deg);
+}
+
+.isaac:not(:checked)~.moses>.david {
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.isaac:not(:checked)~.moses>.solomon {
+    transform-origin: bottom right;
+    transform: translateY(calc(var(--transform) * -1)) rotate(45deg);
 }
